@@ -6,7 +6,7 @@
 /*   By: ldepenne <ldepenne@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 19:16:31 by ldepenne          #+#    #+#             */
-/*   Updated: 2026/11/18 23:59:43 by ldepenne         ###   ########.fr       */
+/*   Updated: 2026/11/19 11:59:21 by ldepenne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ class	Span {
 		Span &operator=(const Span& other);
 		~Span();
 
+		void	addNumber(int start, int end);
 		void	addNumber(int n);
-		int		shortestSpan();
-		int		longtestSpan();
+		int		shortestSpan() const;
+		int		longtestSpan() const;
 
 	private:
 		size_t				_maxsize;

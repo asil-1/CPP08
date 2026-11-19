@@ -6,7 +6,7 @@
 /*   By: ldepenne <ldepenne@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 16:53:22 by ldepenne          #+#    #+#             */
-/*   Updated: 2026/11/18 23:59:35 by ldepenne         ###   ########.fr       */
+/*   Updated: 2026/11/19 20:38:02 by ldepenne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,18 @@ Span	&Span::operator=(const Span& other) {
 
 Span::~Span() {};
 
+void	Span::addNumber(int start, int end) {
+	if (end <= start)
+		throw std::runtime_error ("The data range is incorrect");
+	for (int i = start; i < end; i++) {
+		try {
+			addNumber(i);
+		} catch (std::exception &e) {
+			return;
+		}
+	}
+}
+
 void	Span::addNumber(int n) {
 	if (_vec.size() >= _maxsize)
 		throw std::runtime_error("Array is full");
@@ -41,7 +53,7 @@ void	Span::addNumber(int n) {
 }
 
 /* @brief find the smallest difference between two numbers */
-int	Span::shortestSpan() {
+int	Span::shortestSpan() const {
 	if (_vec.size() < 2)
 		throw std::runtime_error("There are not enough elements in the array");
 
@@ -56,7 +68,7 @@ int	Span::shortestSpan() {
 	return minSpan;
 }
 
-int	Span::longtestSpan() {
+int	Span::longtestSpan() const {
 	if (_vec.size() < 2)
 		throw std::runtime_error("There are not enough elements in the array");
 
