@@ -6,7 +6,7 @@
 /*   By: ldepenne <ldepenne@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 09:14:11 by ldepenne          #+#    #+#             */
-/*   Updated: 2026/11/06 18:15:12 by ldepenne         ###   ########.fr       */
+/*   Updated: 2026/11/20 16:35:36 by ldepenne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <iostream>
 # include <algorithm>
+
+# define COLOR "\033[0;38;5;12m"
+# define NC "\033[0m"
 
 class	NotFound : public std::exception {
 	public:
